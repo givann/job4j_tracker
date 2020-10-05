@@ -29,9 +29,8 @@ public class Triangle {
         double ab = first.distance(second);
         double ac = first.distance(third);
         double bc = second.distance(third);
-        double p = period(ab, ac, bc);
+        double per = period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
-            double per = period(ab, ac, bc);
             rsl = per * (per - ab) * (per - ac) * (per - bc);
         }
         return rsl;

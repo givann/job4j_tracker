@@ -20,4 +20,12 @@ public class Product {
     public String label() {
         return name + " " + price();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 }

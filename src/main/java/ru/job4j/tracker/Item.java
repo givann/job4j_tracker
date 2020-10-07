@@ -7,8 +7,10 @@ public class Item {
     private String name;
 
     public Item(String name) {
-        this.id = id;
         this.name = name;
+    }
+
+    public Item() {
     }
 
     public int getId() {

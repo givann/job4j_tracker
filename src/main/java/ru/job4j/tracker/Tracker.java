@@ -14,40 +14,53 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+
+    public Item[] findAll() {
+        Item[] withoutNull = new Item[size];
+        int newSize = 0;
+        for (int i = 0; i < withoutNull.length; i++) {
+            if (this.items[i].getName() != null) {
+                withoutNull[newSize] = this.items[i];
+                newSize++;
+            }
+        }
+        return Arrays.copyOf(withoutNull, newSize);
+    }
+
+    public Item[] findByName(String key) {
+        Item[] keys = new Item[ids - 1];
+        int newSize = 0;
+        for (int i = 0; i < keys.length; i++) {
+            if (items[i].getName() != null) {
+                if (items[i].getName().equals(key)) {
+                    keys[newSize] = items[i];
+                    newSize++;
+                }
+            }
+        }
+        return Arrays.copyOf(keys, newSize);
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
     }
 
-    public Item[] findAll() {
-        Item[] withoutNull = new Item[size];
-        size = 0;
-        for (int i = 0; i < withoutNull.length; i++) {
-            if (this.items[i].getName() != null) {
-                withoutNull[size] = this.items[i];
-                size++;
-            }
-        }
-        return Arrays.copyOf(withoutNull, size);
+    public boolean replace(int id, Item item) {
+        int ind = indexOf(id);
+        items[ind].setName(item.getName());
+        return items[ind].getName().equals(item.getName());
     }
 
-    public Item[] findByName(String key) {
-        Item[] keys = new Item[ids-1];
-        size = 0;
-        for (int i = 0; i < keys.length ; i++) {
-            if (items[i].getName()!=null){
-                if (items[i].getName().equals(key)){
-                    keys[size] =items[i];
-                    size++;
-                }
-            }
-        }
-        return Arrays.copyOf(keys,size);
-    }
+
 }

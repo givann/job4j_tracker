@@ -5,31 +5,10 @@ import java.time.LocalDateTime;
 public class Item {
     private int id;
     private String name;
-    private LocalDateTime created = LocalDateTime.now();
 
-    public Item() {
-    }
-
-    public Item(int id) {
-        this.id = id;
-    }
-
-    public Item(int id, String name) {
+    public Item(String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public LocalDateTime getLocalDateTime() {
-        return created;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created=" + created +
-                '}';
     }
 
     public int getId() {
@@ -46,5 +25,13 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

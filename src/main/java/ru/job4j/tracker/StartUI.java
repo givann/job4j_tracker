@@ -16,13 +16,13 @@ public class StartUI {
         tracker.add(item2);
         tracker.add(item3);
         tracker.add(item4);
-//        System.out.println(Arrays.toString(tracker.findByName("one")));
+        System.out.println(Arrays.toString(tracker.findByName("one")));
 //
 //
 //        System.out.println(tracker.findById(1));
-        System.out.println(tracker.replace(1, item4));
+//        System.out.println(tracker.replace(1, item4));
 
-        System.out.println(Arrays.toString(tracker.findAll()));
+//        System.out.println(Arrays.toString(tracker.findAll()));
 //
     }
 }

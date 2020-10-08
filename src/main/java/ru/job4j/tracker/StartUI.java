@@ -25,12 +25,16 @@ public class StartUI {
                 int id = scanner.nextInt();
                 scanner.nextLine();
                 System.out.println("Enter item:");
-                tracker.replace(id, new Item(scanner.nextLine()));
+                if (tracker.replace(id, new Item(scanner.nextLine()))) {
+                    System.out.println("Succesful");
+                } else System.out.println("Unseccesful");
             } else if (select == 3) {
                 System.out.println("Enter id");
                 int id = scanner.nextInt();
                 scanner.nextLine();
-                tracker.delete(id);
+                if (tracker.delete(id)){
+                    System.out.println("Succesful");
+                } else System.out.println("Unseccesful");
             } else if (select == 4) {
                 System.out.println("Enter id:");
                 int id = scanner.nextInt();

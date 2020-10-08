@@ -18,10 +18,10 @@ public class Tracker {
         return index != -1 ? items[index] : null;
     }
 
-
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
+
 
     public Item[] findByName(String key) {
         Item[] keys = new Item[size];
@@ -50,15 +50,23 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int ind = indexOf(id);
-        items[ind].setName(item.getName());
-        return items[ind].getName().equals(item.getName());
+        if (ind != -1) {
+            items[ind] = item;
+            item.setId(id);
+        }
+
+        return ind != -1;
     }
 
-//    public boolean delete(int id) {
-//        Item[] afterDelete = new Item[size-1];
-//        int index = indexOf(id);
-//        System.arraycopy(items, index+1, afterDelete, index, size-1);
-//    }
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index);
+            items[size - 1] = null;
+            size--;
+        }
+        return index != -1;
+    }
 
 
 }

@@ -54,7 +54,6 @@ public class Tracker {
             items[ind] = item;
             item.setId(id);
         }
-
         return ind != -1;
     }
 

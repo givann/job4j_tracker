@@ -2,13 +2,15 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 
+import static java.lang.Integer.valueOf;
+
 
 public class StartUI {
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
-            int select = Integer.valueOf(input.askInt("Select: "));
+            int select = valueOf(input.askInt("Select: "));
             if (select == 0) {
                 createItem(input, tracker);
             } else if (select == 1) {
@@ -51,8 +53,8 @@ public class StartUI {
     }
 
     public static void editItem(Input input, Tracker tracker) {
-        int id = input.askInt("Enter id:");
-        if (tracker.replace(id, new Item(input.askStr("Enter item:")))) {
+        String id = input.askStr("Enter id:");
+        if (tracker.replace(valueOf(id), new Item(input.askStr("Enter item:")))) {
             System.out.println("Succesful");
         } else System.out.println("Unseccesful");
     }
@@ -86,6 +88,7 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(input, tracker);
+//        new StartUI().init(input, tracker);
+
     }
 }

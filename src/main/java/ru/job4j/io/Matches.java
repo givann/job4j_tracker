@@ -10,11 +10,7 @@ public class Matches {
         while (spic != 0) {
             System.out.println("Введите количество от 1 до 3:");
             int num = scanner.nextInt();
-            if (num == 1) {
-                spic -= num;
-            } else if (num == 2) {
-                spic -= num;
-            } else if (num == 3) {
+            if (num == 1 || num == 2 || num == 3) {
                 spic -= num;
             } else {
                 System.out.println("Введите правильное число");

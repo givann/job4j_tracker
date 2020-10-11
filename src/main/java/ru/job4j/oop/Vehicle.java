@@ -1,8 +1,7 @@
 package ru.job4j.oop;
 
-public class Vehicle {
-    public void move() {
-    }
+public interface Vehicle {
+    public void move();
 
     public static void main(String[] args) {
         Vehicle vehicle = new Bus();

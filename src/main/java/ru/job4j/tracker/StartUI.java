@@ -1,37 +1,35 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 import static java.lang.Integer.valueOf;
 
 
 public class StartUI {
-    public void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
-            this.showMenu();
-            int select = valueOf(input.askInt("Select: "));
-            if (select == 0) {
-                createItem(input, tracker);
-            } else if (select == 1) {
-                showAllItem(tracker);
-            } else if (select == 2) {
-                editItem(input, tracker);
-            } else if (select == 3) {
-                deleteItem(input, tracker);
-            } else if (select == 4) {
-                findById(input, tracker);
-            } else if (select == 5) {
-                findByName(input, tracker);
-            } else if (select == 6) {
-                run = !run;
-            }
+            this.showMenu(actions);
+            int select = input.askInt("Select: ");
+            UserAction action = actions[select];
+            run = action.execute(input, tracker);
         }
-
     }
 
-    private void showMenu() {
-        System.out.println("Menu.");
+//    private void showMenu() {
+//        System.out.println("Menu.");
+//        System.out.println("0. Add new Item\n" +
+//                "1. Show all items\n" +
+//                "2. Edit item\n" +
+//                "3. Delete item\n" +
+//                "4. Find item by Id\n" +
+//                "5. Find items by name\n" +
+//                "6. Exit Program\n");
+//    }
+
+    private void showMenu(UserAction[] actions) {
+        System.out.println("Menu:");
         System.out.println("0. Add new Item\n" +
                 "1. Show all items\n" +
                 "2. Edit item\n" +
@@ -39,7 +37,11 @@ public class StartUI {
                 "4. Find item by Id\n" +
                 "5. Find items by name\n" +
                 "6. Exit Program\n");
+        for (int index = 0; index < actions.length; index++) {
+            System.out.println(index + ". " + actions[index].name());
+        }
     }
+
 
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
@@ -49,6 +51,9 @@ public class StartUI {
     }
 
     public static void showAllItem(Tracker tracker) {
+        for (Item item : tracker.findAll() ) {
+            System.out.println(item.getId() + " " + item.getName());
+        }
         System.out.println(Arrays.toString(tracker.findAll()));
     }
 
@@ -88,7 +93,10 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-//        new StartUI().init(input, tracker);
+        UserAction[] actions = new UserAction[0];
+        CreateAction createAction = new CreateAction();
+        actions[0] = createAction;
+        new StartUI().init(input, tracker, actions);
 
     }
 }

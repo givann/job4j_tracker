@@ -67,7 +67,11 @@ public class StartUI {
         if (tracker.findByName(newName).length == 0) {
             System.out.println("Not exist");
         } else
-            System.out.println(Arrays.toString(tracker.findByName(newName)));
+            for (Item item : tracker.findByName(newName)) {
+                System.out.println(item.getName() + " " + item.getId());
+
+            }
+        ;
 
     }
 
@@ -75,7 +79,7 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{new CreateAction(), new ShowAllAction(),
-        new EditItemAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()};
+                new EditItemAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()};
 
 
         new StartUI().init(input, tracker, actions);

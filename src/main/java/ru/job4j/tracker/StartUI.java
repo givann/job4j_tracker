@@ -1,8 +1,5 @@
 package ru.job4j.tracker;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
-
 import static java.lang.Integer.valueOf;
 
 
@@ -79,7 +76,7 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{new CreateAction(), new ShowAllAction(),
-                new EditItemAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()};
+                new ReplaceAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()};
 
 
         new StartUI().init(input, tracker, actions);

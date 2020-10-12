@@ -2,10 +2,10 @@ package ru.job4j.tracker;
 
 import static java.lang.Integer.valueOf;
 
-public class EditItemAction implements UserAction {
+public class ReplaceAction implements UserAction {
     @Override
     public String name() {
-        return "Edit item";
+        return "Replace item";
     }
 
     @Override

@@ -17,26 +17,8 @@ public class StartUI {
         }
     }
 
-//    private void showMenu() {
-//        System.out.println("Menu.");
-//        System.out.println("0. Add new Item\n" +
-//                "1. Show all items\n" +
-//                "2. Edit item\n" +
-//                "3. Delete item\n" +
-//                "4. Find item by Id\n" +
-//                "5. Find items by name\n" +
-//                "6. Exit Program\n");
-//    }
-
     private void showMenu(UserAction[] actions) {
         System.out.println("Menu:");
-        System.out.println("0. Add new Item\n" +
-                "1. Show all items\n" +
-                "2. Edit item\n" +
-                "3. Delete item\n" +
-                "4. Find item by Id\n" +
-                "5. Find items by name\n" +
-                "6. Exit Program\n");
         for (int index = 0; index < actions.length; index++) {
             System.out.println(index + ". " + actions[index].name());
         }
@@ -51,10 +33,9 @@ public class StartUI {
     }
 
     public static void showAllItem(Tracker tracker) {
-        for (Item item : tracker.findAll() ) {
+        for (Item item : tracker.findAll()) {
             System.out.println(item.getId() + " " + item.getName());
         }
-        System.out.println(Arrays.toString(tracker.findAll()));
     }
 
     public static void editItem(Input input, Tracker tracker) {
@@ -93,9 +74,10 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = new UserAction[0];
-        CreateAction createAction = new CreateAction();
-        actions[0] = createAction;
+        UserAction[] actions = new UserAction[]{new CreateAction(), new ShowAllAction(),
+        new EditItemAction(), new DeleteAction(), new FindByIdAction(), new FindByNameAction(), new ExitAction()};
+
+
         new StartUI().init(input, tracker, actions);
 
     }

@@ -14,7 +14,9 @@ public class FindByNameAction implements UserAction {
         if (tracker.findByName(newName).length == 0) {
             System.out.println("Not exist");
         } else
-            System.out.println(Arrays.toString(tracker.findByName(newName)));
+            for (Item item : tracker.findAll()) {
+                System.out.println("id=" + item.getId() + " Name=" + item.getName());
+            }
 
         return true;
     }

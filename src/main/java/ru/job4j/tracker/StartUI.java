@@ -16,7 +16,7 @@ public class StartUI {
             int select = validateInput.askInt("Select: ");
             if (select < 0 || select >= actions.length) {
                 out.println("Wrong input, you can select: 0 .. " + (actions.length - 1));
-                throw new IllegalArgumentException("Wrong number");
+                continue;
             }
             UserAction action = actions[select];
             run = action.execute(input, tracker);
@@ -36,10 +36,10 @@ public class StartUI {
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-//                new ShowAllAction(output),
-//                new ReplaceAction(output),
-//                new FindByIdAction(output),
-//                new FindByNameAction(output),
+                new ShowAllAction(output),
+                new ReplaceAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
                 new Exit()
 
         };

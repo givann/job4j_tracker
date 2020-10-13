@@ -17,7 +17,6 @@ public class FindByNameAction implements UserAction {
             for (Item item : tracker.findAll()) {
                 System.out.println("id=" + item.getId() + " Name=" + item.getName());
             }
-
         return true;
     }
 }

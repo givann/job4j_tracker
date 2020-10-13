@@ -67,6 +67,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find by name" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
+                        "id=" + item.getId() + " Name=" + item.getName() + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find by name" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator()
@@ -91,9 +92,10 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find by Id" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
+                        item.getName() + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find by Id" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator()
         ));
-}
     }
+}

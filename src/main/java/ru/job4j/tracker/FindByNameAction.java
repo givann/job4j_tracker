@@ -17,10 +17,10 @@ public class FindByNameAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         String newName = input.askStr("Enter name: ");
         if (tracker.findByName(newName).length == 0) {
-            System.out.println("Not exist");
+            this.out.println("Not exist");
         } else
             for (Item item : tracker.findAll()) {
-                System.out.println("id=" + item.getId() + " Name=" + item.getName());
+                this.out.println("id=" + item.getId() + " Name=" + item.getName());
             }
         return true;
     }

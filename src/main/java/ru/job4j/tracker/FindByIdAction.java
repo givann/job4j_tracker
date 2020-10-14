@@ -16,7 +16,7 @@ public class FindByIdAction  implements UserAction{
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id:");
         Item item = tracker.findById(id);
-        if (item.getId() != -1) {
+        if (item != null) {
             this.out.println(item.getName());
         } else {
             this.out.println("Not exist");

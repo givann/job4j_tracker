@@ -22,21 +22,21 @@ public class UserStore {
                 new User("Petr Arsentev", true)
         };
         User user = null;
-        User userP = new User("To", true);
+        User userP = new User("Totr", true);
         try {
             user = findUser(users, "Petr Arsentev");
         } catch (UserNotFoundException e) {
             e.printStackTrace();
         }
-//        try {
-//            if (validate(userP)) {
-//                System.out.println("This user has an access");
-//            }
-//        } catch (UserInvalidException e) {
-//            e.printStackTrace();
-//        } catch (NullPointerException e) {
-//            e.getMessage();
-//        }
+        try {
+            if (validate(userP)) {
+                System.out.println("This user has an access");
+            }
+        } catch (UserInvalidException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.getMessage();
+        }
     }
 }
 

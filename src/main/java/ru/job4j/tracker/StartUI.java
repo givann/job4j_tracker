@@ -39,6 +39,7 @@ public class StartUI {
                 /* another actions */
         };
         new StartUI(output).init(input, tracker, actions);
+
     }
 
 }

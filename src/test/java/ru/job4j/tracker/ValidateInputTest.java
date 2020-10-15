@@ -12,7 +12,7 @@ public class ValidateInputTest {
     public void whenInvalidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[]{"re","1"}
+                new String[]{"re", "1"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
@@ -34,7 +34,7 @@ public class ValidateInputTest {
     public void whenOut() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[]{"0", "1", "1"}
+                new String[]{ "0","re", "1", "1"}
         );
         UserAction[] actions = {
                 new FindByIdAction(out),
@@ -48,7 +48,8 @@ public class ValidateInputTest {
         assertThat(out.toString(), Is.is(
                 "Menu." + System.lineSeparator() +
                         "0. Find by Id" + System.lineSeparator() +
-                        "1. Exit" + System.lineSeparator()
+                        "1. Exit" + System.lineSeparator() +
+                        "Please enter validate data again." + System.lineSeparator()
         ));
     }
 }

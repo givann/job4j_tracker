@@ -20,7 +20,7 @@ public class FindByNameAction implements UserAction {
         if (tracker.findByName(newName).length == 0) {
             this.out.println("Not exist");
         } else
-            for (Item item : tracker.findAll()) {
+            for (Item item : tracker.findByName(newName)) {
                 this.out.println("id=" + item.getId() + " Name=" + item.getName());
             }
         return true;

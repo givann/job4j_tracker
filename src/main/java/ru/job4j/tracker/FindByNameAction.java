@@ -17,7 +17,7 @@ public class FindByNameAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         String newName = input.askStr("Enter name: ");
-        if (tracker.findByName(newName).length == 0) {
+        if (tracker.findByName(newName).size() == 0) {
             this.out.println("Not exist");
         } else
             for (Item item : tracker.findByName(newName)) {

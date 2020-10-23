@@ -39,8 +39,6 @@ public class TrackerTest {
         tracker.add(bug);
         int id = bug.getId();
         tracker.delete(id);
-
-
         assertThat(tracker.findAll().isEmpty(), is(tracker.findAll().size() == 0));
     }
 }

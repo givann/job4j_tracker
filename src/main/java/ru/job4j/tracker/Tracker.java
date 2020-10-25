@@ -27,7 +27,10 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        return items.get(indexOf(id));
+        if (indexOf(id) != -1) {
+            return items.get(id);
+        }
+        return null;
     }
 
 
@@ -52,7 +55,7 @@ public class Tracker {
             items.set(index, item);
         }
         item.setId(id);
-        return item.getId() != -1;
+        return index != -1;
     }
 
     public boolean delete(int id) {

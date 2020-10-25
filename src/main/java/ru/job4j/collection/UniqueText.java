@@ -12,21 +12,13 @@ public class UniqueText {
             check.add(s);
         }
         for (String s : text) {
-            if (check.contains(s)) {
+            if (!check.contains(s)) {
+                return false;
+            } else {
                 count++;
             }
-
         }
         return count == check.size();
-    }
-
-
-    public static void main(String[] args) {
-        HashSet<String> hashSet = new HashSet<>();
-        hashSet.add("My cat eats a mouse and milk");
-        String one = ("My cat eats a mouse and milk");
-        String two = ("My eats cat  a mouse and milk");
-        System.out.println(isEquals(one, two));
     }
 }
 

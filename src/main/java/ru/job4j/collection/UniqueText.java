@@ -14,11 +14,9 @@ public class UniqueText {
         for (String s : text) {
             if (!check.contains(s)) {
                 return false;
-            } else {
-                count++;
             }
         }
-        return count == check.size();
+        return true;
     }
 }
 

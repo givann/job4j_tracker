@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+import ru.job4j.tracker.ItemSingle.SortItemByDecrease;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -40,5 +46,41 @@ public class TrackerTest {
         int id = bug.getId();
         tracker.delete(id);
         assertThat(tracker.findAll().isEmpty(), is(tracker.findAll().size() == 0));
+    }
+
+    @Test
+    public void whenSortIncr() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("One");
+        Item item1 = new Item("Three");
+        Item item2 = new Item("Two");
+        tracker.add(item);
+        tracker.add(item1);
+        tracker.add(item2);
+        Collections.sort(tracker.findAll(), new SortItemByIncrease());
+        List<Integer> llst = new ArrayList<>();
+        for (Item item3 : tracker.findAll()) {
+            llst.add(item3.getId());
+        }
+        assertThat(llst, is(Arrays.asList(1, 2, 3)));
+
+    }
+
+    @Test
+    public void whenSortDcr() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("One");
+        Item item1 = new Item("Three");
+        Item item2 = new Item("Two");
+        tracker.add(item);
+        tracker.add(item1);
+        tracker.add(item2);
+        Collections.sort(tracker.findAll(), new SortItemByDecrease());
+        List<Integer> llst = new ArrayList<>();
+        for (Item item3 : tracker.findAll()) {
+            llst.add(item3.getId());
+        }
+        assertThat(llst, is(Arrays.asList(3, 2, 1)));
+
     }
 }

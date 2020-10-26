@@ -31,19 +31,19 @@ public class BankService {
         return null;
     }
 
+
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            user = findByPassport(passport);
+            List<Account> accounts = users.get(user);
+            int index = accounts.indexOf(new Account(requisite, -1));
+            if (index != -1) {
+                return accounts.get(index);
+            }
         }
-        List<Account> accounts = users.get(user);
-        int index = accounts.indexOf(new Account(requisite, -1));
-        if (index == -1) {
-            return null;
-        }
-        return accounts.get(index);
-
+        return null;
     }
+
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {

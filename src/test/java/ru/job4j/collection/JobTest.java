@@ -89,6 +89,6 @@ public class JobTest {
                 new Job("Impl task", 2),
                 new Job("Fix bug", 1)
         );
-        assertThat(rsl, lessThan(2)) ;
+        assertThat(rsl, lessThan(2));
     }
 }

@@ -27,7 +27,5 @@ public class Library {
                 System.out.println(arr[i].getName() + " " + arr[i].getQuantityOfPages());
             }
         }
-
-
     }
 }

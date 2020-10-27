@@ -26,7 +26,6 @@ public class NotifyAccountTest {
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
 
-
     @Test
     public void sentDupl() {
         List<Account> accounts = Arrays.asList(

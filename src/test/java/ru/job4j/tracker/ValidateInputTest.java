@@ -19,7 +19,8 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(out.toString(), Is.is("Please enter validate data again." + System.lineSeparator()));
+        assertThat(out.toString(), Is.is("Please enter validate data again."
+                + System.lineSeparator()));
     }
 
     @Test
@@ -49,10 +50,10 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu:");
         new StartUI(out).init(input, tracker, actions);
         assertThat(out.toString(), Is.is(
-                "Menu." + System.lineSeparator() +
-                        "0. Find by Id" + System.lineSeparator() +
-                        "1. Exit" + System.lineSeparator() +
-                        "Please enter validate data again." + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Find by Id" + System.lineSeparator()
+                        + "1. Exit" + System.lineSeparator()
+                        + "Please enter validate data again." + System.lineSeparator()
         ));
     }
 }

@@ -1,6 +1,10 @@
-package ru.job4j.tracker.ItemSingle;
+package ru.job4j.tracker;
 
 import org.junit.Test;
+import ru.job4j.tracker.SinglThree;
+import ru.job4j.tracker.SingleFour;
+import ru.job4j.tracker.SingleTonEnum;
+import ru.job4j.tracker.SingleToneSec;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;

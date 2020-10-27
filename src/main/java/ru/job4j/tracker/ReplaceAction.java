@@ -8,6 +8,7 @@ public class ReplaceAction implements UserAction {
     public ReplaceAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Replace item";
@@ -20,7 +21,9 @@ public class ReplaceAction implements UserAction {
         Item item = new Item(name);
         if (tracker.replace(valueOf(id), item)) {
             this.out.println("Succesful");
-        } else this.out.println("Unseccesful");
+        } else {
+            this.out.println("Unseccesful");
+        }
         return true;
     }
 }

@@ -1,6 +1,4 @@
-package ru.job4j.tracker.ItemSingle;
-
-import ru.job4j.tracker.Item;
+package ru.job4j.tracker;
 
 public class SingleToneSec {
     private static SingleToneSec instance;

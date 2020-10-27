@@ -28,7 +28,7 @@ public class Matches {
                     System.out.println("Вы выйграли " + nameOne);
                 }
 
-            } else{
+            } else {
                 if (spic > 0) {
                     System.out.println("Осталось спичек: " + spic);
                 } else {
@@ -36,8 +36,6 @@ public class Matches {
                 }
 
             }
-
-
         }
     }
 }

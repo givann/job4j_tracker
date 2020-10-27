@@ -6,8 +6,7 @@ import java.util.List;
 
 public class Tracker {
     private final List<Item> items = new ArrayList<>();
-    int ids = 1;
-
+    private int ids = 1;
 
     public Item add(Item item) {
         items.add(item);
@@ -33,11 +32,9 @@ public class Tracker {
         return null;
     }
 
-
     public List<Item> findAll() {
         return items;
     }
-
 
     public List<Item> findByName(String key) {
         ArrayList<Item> arrayList = new ArrayList<>();
@@ -65,6 +62,4 @@ public class Tracker {
         }
         return id > 0;
     }
-
-
 }

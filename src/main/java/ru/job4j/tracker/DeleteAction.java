@@ -6,6 +6,7 @@ public class DeleteAction implements UserAction {
     public DeleteAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Delete Item";
@@ -17,10 +18,8 @@ public class DeleteAction implements UserAction {
         if (tracker.delete(id)) {
             this.out.println("Succesful");
         } else {
-           this.out.println("Unseccesful");
+            this.out.println("Unseccesful");
         }
         return true;
     }
-
-
 }

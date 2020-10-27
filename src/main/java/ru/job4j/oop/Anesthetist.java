@@ -4,9 +4,6 @@ public class Anesthetist extends Doctor {
     private int yearsOfeducations;
     private String typeOfAnasthesist;
 
-    public void anasthesia(){
-
+    public void anasthesia() {
     }
-
-
 }

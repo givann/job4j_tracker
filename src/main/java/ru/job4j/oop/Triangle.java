@@ -15,13 +15,9 @@ public class Triangle {
         return (a + b + c) / 2;
     }
 
-
     public boolean exist(double ab, double ac, double bc) {
         double per = period(ab, ac, bc);
-        if (per > 0)
-            return true;
-        else
-            return false;
+        return per > 0;
     }
 
     public double area() {

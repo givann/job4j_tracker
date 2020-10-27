@@ -19,10 +19,11 @@ public class FindByNameAction implements UserAction {
         String newName = input.askStr("Enter name: ");
         if (tracker.findByName(newName).size() == 0) {
             this.out.println("Not exist");
-        } else
+        } else {
             for (Item item : tracker.findByName(newName)) {
                 this.out.println("id=" + item.getId() + " Name=" + item.getName());
             }
+        }
         return true;
     }
 }

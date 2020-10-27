@@ -4,9 +4,9 @@ public class Doctor extends Profession {
     private String qualifications;
     private String yearsOfeducations;
 
-    public void exam(){
+    public void exam() {
     }
 
-    public void visit(){
+    public void visit() {
     }
 }

@@ -2,8 +2,13 @@ package ru.job4j.tracker;
 
 public class SingleToneSec {
     private static SingleToneSec instance;
+    private Tracker tracker = new Tracker();
 
     private SingleToneSec() {
+    }
+
+    public Tracker getTracker() {
+        return tracker;
     }
 
     public static SingleToneSec getInstance() {

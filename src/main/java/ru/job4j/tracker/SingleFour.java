@@ -1,7 +1,14 @@
 package ru.job4j.tracker;
 
 public class SingleFour {
+    private Tracker tracker;
+
     private SingleFour() {
+        tracker = new Tracker();
+    }
+
+    public Tracker getTracker() {
+        return tracker;
     }
 
     public static SingleFour getInstance() {

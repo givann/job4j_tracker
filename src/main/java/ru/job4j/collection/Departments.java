@@ -27,6 +27,12 @@ public class Departments {
     }
 
     public static void main(String[] args) {
+        Set<String> strings = new TreeSet<>();
+
+        strings.add("er");
+        strings.add("era");
+        strings.add("erat");
+        strings.add("erata");
 
     }
 

@@ -35,7 +35,6 @@ public class DepartmentsTest {
 
     }
 
-
     @Test
     public void sortAsc() {
         ArrayList<String> input = new ArrayList<>();

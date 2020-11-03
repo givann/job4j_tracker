@@ -3,6 +3,7 @@ package ru.job4j.lambda;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 public class AttachmentSort {
     public static void main(String[] args) {
@@ -29,6 +30,14 @@ public class AttachmentSort {
                 return lef.getName().compareTo(rig.getName());
             }
         };
+
+        Function<String, Double> integerIntegerFunction = new Function<String, Double>() {
+            @Override
+            public Double apply(String s) {
+                return null;
+            }
+        };
+
         // Здесь создайте компаратор на основании анонимного класса.
     }
 }

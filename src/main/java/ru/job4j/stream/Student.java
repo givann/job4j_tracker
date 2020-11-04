@@ -1,8 +1,6 @@
 package ru.job4j.stream;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Student {
@@ -41,10 +39,7 @@ public class Student {
         return Objects.hash(score, surname);
     }
 
-    Map<String, Student> listToMap(List<Student> list) {
-        Map<String, Student> mSt = list.stream()
-                .distinct()
-                .collect(Collectors.toMap(e -> getSurname(), e -> e));
-        return mSt;
-    }
+
+
+
 }

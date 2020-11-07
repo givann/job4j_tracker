@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 public class Student {
     private int score;
-
     private String surname;
 
     public Student(int score, String surname) {
@@ -38,8 +37,4 @@ public class Student {
     public int hashCode() {
         return Objects.hash(score, surname);
     }
-
-
-
-
 }

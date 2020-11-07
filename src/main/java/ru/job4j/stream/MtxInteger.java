@@ -8,15 +8,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MtxInteger {
-    public static void main(String[] args) {
-        Integer[][] var = {
-                {0, 3},
-                {1, 4}
-        };
-        Stream.of(var);
-        List<Integer> list = Stream.of(var)
+    static List<Integer> arrDToLst(Integer[][] in) {
+        List<Integer> list = Stream.of(in)
                 .flatMap(Arrays::stream)
                 .collect(Collectors.toList());
-        System.out.println(list.toString());
+        return list;
     }
 }

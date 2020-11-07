@@ -28,11 +28,12 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        List<User> listUser = users.keySet().stream()
+        User nUser = users.keySet().stream()
                 .filter(e -> e.getPassport().equals(passport))
-                .collect(Collectors.toList());
-        if (listUser.size() > 0) {
-            return listUser.get(0);
+                .findFirst()
+                .orElse(null);
+        if (nUser != null) {
+            return nUser;
         } else {
             return null;
         }
@@ -41,10 +42,11 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> accountList = users.get(user).stream()
+            Account accountN = users.get(user).stream()
                     .filter(e -> e.getRequisite().equals(requisite))
-                    .collect(Collectors.toList());
-            return accountList.get(0);
+                    .findFirst()
+                    .orElse(null);
+            return accountN;
         }
         return null;
     }

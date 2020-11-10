@@ -21,4 +21,23 @@ public class ProfilesTest {
                 new Address("Spb", "yyy", 1, 7));
         assertThat(actual, is(exp));
     }
+
+    @Test
+    public void collectUniqAdr() {
+        List<Profile> list = new ArrayList<>();
+        Profile profile = new Profile(new Address("Msk", "hhh", 4, 1));
+        Profile profile1 = new Profile(new Address("Msk", "hhh", 4, 1));
+        Profile profile2 = new Profile(new Address("Msk", "hhh", 4, 1));
+        Profile profile3 = new Profile(new Address("Spb", "yyy", 1, 7));
+        list.add(profile);
+        list.add(profile1);
+        list.add(profile2);
+        list.add(profile3);
+        List<Address> act = Profiles.collect(list);
+        List<Address> exp = List.of(new Address("Msk", "hhh", 4, 1),
+                new Address("Spb", "yyy", 1, 7));
+        assertThat(act, is(exp));
+
+
+    }
 }

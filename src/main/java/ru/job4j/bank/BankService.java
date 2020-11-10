@@ -25,16 +25,10 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        User nUser = users.keySet().stream()
+        return users.keySet().stream()
                 .filter(e -> e.getPassport().equals(passport))
                 .findFirst()
                 .orElse(null);
-//        Optional optionalUser = nUser.getPassport().
-        if (nUser != null) {
-            return nUser;
-        } else {
-            return null;
-        }
     }
 
     public Account findByRequisite(String passport, String requisite) {

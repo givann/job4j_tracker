@@ -27,6 +27,20 @@ public class JobTest {
     }
 
     @Test
+    public void whenFirstCompatorEqZeroByPr() {
+        List<Job> al = new ArrayList<>();
+        Job job = new Job("One", 0);
+        Job job1 = new Job("One", 1);
+        al.add(job);
+        al.add(job1);
+        Collections.sort(al, new JobDescByName().thenComparing(new JobDescByPriority()));
+        Job jRes = al.get(0);
+        assertThat(jRes.getPriority(), is(1));
+    }
+
+
+
+    @Test
     public void whenCompatorByNameIncr() {
         List<Job> al = new ArrayList<>();
         Job job = new Job("One", 0);

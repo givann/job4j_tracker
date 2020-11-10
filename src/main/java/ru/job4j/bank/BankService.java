@@ -1,9 +1,6 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collector;
@@ -32,6 +29,7 @@ public class BankService {
                 .filter(e -> e.getPassport().equals(passport))
                 .findFirst()
                 .orElse(null);
+//        Optional optionalUser = nUser.getPassport().
         if (nUser != null) {
             return nUser;
         } else {

@@ -38,8 +38,6 @@ public class JobTest {
         assertThat(jRes.getPriority(), is(1));
     }
 
-
-
     @Test
     public void whenCompatorByNameIncr() {
         List<Job> al = new ArrayList<>();

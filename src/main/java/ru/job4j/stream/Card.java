@@ -29,5 +29,9 @@ public class Card {
         List<Card> listC = Stream.of(Suit.values())
                 .flatMap(el -> Stream.of(Value.values()).map(value1 -> new Card(el, value1)))
                 .collect(Collectors.toList());
+
+        Stream.of("32")
+                .map(x -> Integer.parseInt(x, 16))
+                .forEach(System.out::println);
     }
 }

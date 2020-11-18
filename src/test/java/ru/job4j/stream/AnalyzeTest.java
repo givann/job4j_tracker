@@ -2,7 +2,9 @@ package ru.job4j.stream;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
+
 import org.junit.Test;
+
 import java.util.List;
 
 public class AnalyzeTest {
@@ -46,13 +48,18 @@ public class AnalyzeTest {
     public void whenListOfSubjectAverage() {
         List<Tuple> average = Analyze.averageScoreByPupil(
                 List.of(
-                        new Pupil("Ivanov", List.of(new Subject("Math", 100), new Subject("Lang", 100))),
-                        new Pupil("Petrov", List.of(new Subject("Math", 60), new Subject("Lang", 60)))
-                ).stream()
+                        new Pupil("Ivanov", List.of(
+                                new Subject("Math", 100),
+                                new Subject("Lang", 100))),
+                        new Pupil("Petrov", List.of(
+                                new Subject("Math", 60),
+                                new Subject("Lang", 60))))
+                        .stream()
         );
         assertThat(average, is(List.of(
-                new Tuple("Math", 80D),
-                new Tuple("Lang", 80D)
+                new Tuple("Lang", 80D),
+                new Tuple("Math", 80D)
+
         )));
     }
 

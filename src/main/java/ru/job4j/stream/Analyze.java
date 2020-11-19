@@ -29,7 +29,7 @@ public class Analyze {
         return stream
                 .flatMap(e -> e.getSubjects().stream())
                 .collect(Collectors.groupingBy(
-                        Subject::getName,
+                        Subject::getName, LinkedHashMap::new,
                         Collectors.averagingDouble(Subject::getScore)))
                 .entrySet().stream()
                 .map(e -> new Tuple(e.getKey(), e.getValue()))
